@@ -36,7 +36,7 @@ func (cache Cache[T]) Get(v *T) error {
 		}
 	}
 
-	if download || cache.AlwaysFetch {
+	if download {
 		if cache.URL == "" {
 			return fmt.Errorf("no URL to fetch from")
 		}
