@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/telecter/cmd-launcher/internal/meta"
-	"github.com/telecter/cmd-launcher/internal/network"
+	// "github.com/telecter/cmd-launcher/internal/network"
 	env "github.com/telecter/cmd-launcher/pkg"
 	"github.com/telecter/cmd-launcher/pkg/auth"
 )
