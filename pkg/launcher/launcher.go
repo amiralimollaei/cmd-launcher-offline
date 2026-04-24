@@ -27,8 +27,8 @@ type LaunchOptions struct {
 	DisableMultiplayer bool
 	DisableChat        bool
 
-	skipAssets    bool = true
-	skipLibraries bool = true
+	skipAssets    bool
+	skipLibraries bool
 }
 
 // An EventWatcher is a controller that can handle multiple types of events.
@@ -113,7 +113,7 @@ func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (Launc
 	}
 
 	installedLibs, requiredLibs := filterLibraries(version.Libraries)
-	if !options.skipLibraries {
+	/*if !options.skipLibraries {
 		for _, lib := range requiredLibs {
 			if lib.ShouldInstall {
 				downloads = append(downloads, lib.Artifact.DownloadEntry())
@@ -124,7 +124,7 @@ func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (Launc
 				}
 			}
 		}
-	}
+	}*/
 	watcher(LibrariesResolvedEvent{
 		Total: len(installedLibs) + len(requiredLibs),
 	})
@@ -134,9 +134,9 @@ func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (Launc
 	if err != nil {
 		return LaunchEnvironment{}, fmt.Errorf("retrieve asset index: %w", err)
 	}
-	if !options.skipAssets {
+	/*if !options.skipAssets {
 		downloads = append(downloads, assetIndex.DownloadEntries()...)
-	}
+	}*/
 	watcher(AssetsResolvedEvent{Total: len(assetIndex.Objects)})
 
 	// If no Java path is present, fetch Mojang Java downloads
