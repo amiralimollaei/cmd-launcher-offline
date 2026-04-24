@@ -2,6 +2,9 @@
 
 # cmd-launcher
 
+> [!Warning]
+> This version of cmd-launcher is broken! it assumes every file that it needs already exist on cache, so it can work offline.
+
 A minimal command line Minecraft launcher.  
 EN | [DE](README_de.md)
 
