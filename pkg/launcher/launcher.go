@@ -140,8 +140,8 @@ func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (Launc
 	watcher(AssetsResolvedEvent{Total: len(assetIndex.Objects)})
 
 	// If no Java path is present, fetch Mojang Java downloads
-	var symlinks map[string]string
-	/*if launchEnv.Java == "" {
+	/*var symlinks map[string]string
+	if launchEnv.Java == "" {
 		manifest, err := meta.FetchJavaManifest(version.JavaVersion.Component)
 		if err != nil {
 			return LaunchEnvironment{}, fmt.Errorf("fetch Java manifest: %w", err)
@@ -210,7 +210,7 @@ func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (Launc
 // download takes a list of download entries and executes them, reporting download events to watcher.
 //
 // It also creates all symlinks specified.
-func download(entries []network.DownloadEntry, symlinks map[string]string, watcher EventWatcher) error {
+/*func download(entries []network.DownloadEntry, symlinks map[string]string, watcher EventWatcher) error {
 	for link, target := range symlinks {
 		if err := os.MkdirAll(filepath.Dir(link), 0755); err != nil {
 			return fmt.Errorf("create directory for symlink %q: %w", link, err)
@@ -234,7 +234,7 @@ func download(entries []network.DownloadEntry, symlinks map[string]string, watch
 		}
 	}
 	return nil
-}
+}*/
 
 // createArgs takes data from a launch environment, version metadata, and environment options to
 // create a set of game and Java arguments to pass when starting the game.
