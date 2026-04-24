@@ -23,7 +23,7 @@ type Cache[T any] struct {
 
 // Get checks the cache and checks if it is valid. If it is, its contents are returned. If not, they are fetched and then returned.
 func (cache Cache[T]) Get(v *T) error {
-	download := true
+	/*download := true
 	if _, err := os.Stat(cache.Path); err == nil {
 		if cache.RemoteSha1 != "" {
 			sum, err := cache.Sha1()
@@ -49,7 +49,7 @@ func (cache Cache[T]) Get(v *T) error {
 		if err != nil && download {
 			return fmt.Errorf("%w: %w", ErrNotCached, err)
 		}
-	}
+	}*/
 
 	data, err := os.ReadFile(cache.Path)
 	if err != nil {

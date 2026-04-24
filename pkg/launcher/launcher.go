@@ -27,8 +27,8 @@ type LaunchOptions struct {
 	DisableMultiplayer bool
 	DisableChat        bool
 
-	skipAssets    bool
-	skipLibraries bool
+	skipAssets    bool = true
+	skipLibraries bool = true
 }
 
 // An EventWatcher is a controller that can handle multiple types of events.
