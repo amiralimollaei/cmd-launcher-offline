@@ -93,7 +93,7 @@ func Launch(launchEnv LaunchEnvironment, runner Runner) error {
 
 // Prepare prepares the instance to be launched, returning a LaunchEnvironment, with the provided options and sends events to watcher.
 func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (LaunchEnvironment, error) {
-	var downloads []network.DownloadEntry
+	//var downloads []network.DownloadEntry
 
 	version, err := meta.FetchAllVersionMeta(inst.Loader, inst.GameVersion, inst.LoaderVersion)
 	if err != nil {
