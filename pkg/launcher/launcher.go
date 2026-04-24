@@ -141,7 +141,7 @@ func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (Launc
 
 	// If no Java path is present, fetch Mojang Java downloads
 	var symlinks map[string]string
-	if launchEnv.Java == "" {
+	/*if launchEnv.Java == "" {
 		manifest, err := meta.FetchJavaManifest(version.JavaVersion.Component)
 		if err != nil {
 			return LaunchEnvironment{}, fmt.Errorf("fetch Java manifest: %w", err)
@@ -155,11 +155,11 @@ func Prepare(inst *Instance, options LaunchOptions, watcher EventWatcher) (Launc
 			java = "java.exe"
 		}
 		launchEnv.Java = filepath.Join(env.JavaDir, version.JavaVersion.Component, "bin", java)
-	}
+	}*/
 
-	if err := download(downloads, symlinks, watcher); err != nil {
+	/*if err := download(downloads, symlinks, watcher); err != nil {
 		return LaunchEnvironment{}, fmt.Errorf("download files: %w", err)
-	}
+	}*/
 
 	// Extract LWJGL 2 natives for legacy versions (pre-1.13).
 	// This is a no-op for modern versions that use LWJGL 3.
